@@ -52,7 +52,9 @@ const getUniqueWords = paragraph => {
 
   Object.entries(resultA)
     .filter(e => e[1].length !== 0)
-    .forEach(e => (resultB[e[0]] = e[1]))
+    .forEach(e => {
+      return (resultB[e[0]] = resultB[e[1]])
+    })
 
   return resultB
 }

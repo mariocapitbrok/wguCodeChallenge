@@ -43,18 +43,13 @@ const getUniqueWords = paragraph => {
     'z',
   ]
   const words = paragraph.split(' ')
-  const resultA = {}
-  const resultB = {}
+  const result = {}
 
   alphabet.forEach(c => {
-    resultA[c] = words.filter(w => c === w.split('').shift())
+    result[c] = words.filter(w => c === w.split('').shift())
   })
 
-  Object.entries(resultA)
-    .filter(e => e[1].length !== 0)
-    .forEach(e => (resultB[e[0]] = e[1]))
-
-  return resultB
+  return Object.entries(result).filter(e => e[1].length !== 0)
 }
 
 const listsCollection = getUniqueWords(p)
